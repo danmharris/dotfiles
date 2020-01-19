@@ -12,6 +12,11 @@ Plug 'vim-scripts/mru.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'dense-analysis/ale'
+
+" Language plugins
+Plug 'othree/html5.vim'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 call plug#end()
 
 map <leader>o :BufExplorer<cr>
@@ -34,3 +39,4 @@ set termguicolors
 colorscheme base16-onedark
 
 autocmd BufWritePre * %s/\s\+$//e
+autocmd BufNewFile,BufRead *.tt setf tt2
