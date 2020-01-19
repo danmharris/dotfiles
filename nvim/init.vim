@@ -11,6 +11,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/mru.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 map <leader>o :BufExplorer<cr>
