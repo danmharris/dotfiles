@@ -35,7 +35,7 @@ let g:lightline = {
       \ 'colorscheme': 'one',
       \ }
 
-set termguicolors
+let base16colorspace=256
 colorscheme base16-onedark
 
 autocmd BufWritePre * %s/\s\+$//e
