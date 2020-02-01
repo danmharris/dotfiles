@@ -36,7 +36,7 @@ let g:lightline = {
       \ }
 
 let base16colorspace=256
-colorscheme base16-onedark
+colorscheme base16-monokai
 
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufNewFile,BufRead *.tt setf tt2
