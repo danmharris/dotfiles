@@ -17,12 +17,19 @@ Plug 'dense-analysis/ale'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+
+"" Markdown
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 map <leader>o :BufExplorer<cr>
 map <leader>f :MRU<cr>
 map <c-n> :NERDTreeToggle<cr>
 let g:ctrlp_map = '<c-p>'
+
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_folding_disabled = 1
 
 set noshowmode
 set number relativenumber
@@ -40,3 +47,4 @@ colorscheme base16-monokai
 
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufNewFile,BufRead *.tt setf tt2
+autocmd FileType markdown setlocal spell spelllang=en_gb
