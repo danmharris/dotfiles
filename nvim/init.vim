@@ -17,6 +17,7 @@ Plug 'dense-analysis/ale'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+Plug 'rodjek/vim-puppet'
 
 "" Markdown
 Plug 'godlygeek/tabular'
