@@ -47,5 +47,5 @@ let base16colorspace=256
 colorscheme base16-monokai
 
 autocmd BufWritePre * %s/\s\+$//e
-autocmd BufNewFile,BufRead *.tt setf tt2
+autocmd BufNewFile,BufRead *.tt setf tt2html
 autocmd FileType markdown setlocal spell spelllang=en_gb
