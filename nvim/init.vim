@@ -12,6 +12,8 @@ Plug 'vim-scripts/mru.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'dense-analysis/ale'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-surround'
 
 " Language plugins
 Plug 'othree/html5.vim'
