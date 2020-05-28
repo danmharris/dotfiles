@@ -14,6 +14,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 
 " Language plugins
 Plug 'othree/html5.vim'
@@ -26,20 +27,22 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 call plug#end()
 
-map <leader>o :BufExplorer<cr>
-map <leader>f :MRU<cr>
-map <c-n> :NERDTreeToggle<cr>
-let g:ctrlp_map = '<c-p>'
-
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_folding_disabled = 1
-
 set noshowmode
 set number relativenumber
 set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set smartindent
+set noswapfile
+set colorcolumn=80
+set splitbelow splitright
+
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_folding_disabled = 1
+let g:gitgutter_preview_win_floating = 0
+let NERDTreeMinimalUI = 1
+let NERDTreeQuitOnOpen = 1
 
 let g:lightline = {
       \ 'colorscheme': 'one',
@@ -47,6 +50,20 @@ let g:lightline = {
 
 let base16colorspace=256
 colorscheme base16-monokai
+
+map <leader>o :BufExplorer<cr>
+map <leader>f :MRU<cr>
+map <leader>n :NERDTreeToggle<cr>
+map <leader>m :NERDTreeFind<cr>
+let g:ctrlp_map = '<c-p>'
+
+map <leader>h :wincmd h<cr>
+map <leader>j :wincmd j<cr>
+map <leader>k :wincmd k<cr>
+map <leader>l :wincmd l<cr>
+
+map <leader>gs :G<cr>
+map <leader>gc :Git commit<cr>
 
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufNewFile,BufRead *.tt setf tt2html
