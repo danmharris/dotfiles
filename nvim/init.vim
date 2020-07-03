@@ -10,7 +10,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/mru.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'chriskempson/base16-vim'
+Plug 'morhetz/gruvbox'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
@@ -45,11 +45,12 @@ let NERDTreeMinimalUI = 1
 let NERDTreeQuitOnOpen = 1
 
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'wombat',
       \ }
 
-let base16colorspace=256
-colorscheme base16-monokai
+set termguicolors
+set background=dark
+colorscheme gruvbox
 
 map <leader>o :BufExplorer<cr>
 map <leader>f :MRU<cr>
