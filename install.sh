@@ -25,7 +25,8 @@ install -m 0644 tmux/.tmux.conf ~/
 install -m 0644 zsh/.zshrc ~/
 
 install -dm 0755 ~/.config/polybar
-install -m 0644 polybar/* ~/.config/polybar/
+install -m 0644 polybar/config ~/.config/polybar/
+install -m 0755 polybar/launch.sh ~/.config/polybar/
 
 install -dm 0755 ~/.config/i3
 install -m 0644 i3/config ~/.config/i3/
