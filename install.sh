@@ -9,6 +9,7 @@ sudo apt install i3-gaps \
                  i3lock \
                  xss-lock \
                  dmenu \
+                 playerctl \
                  feh \
                  compton \
                  polybar \
