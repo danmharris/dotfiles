@@ -18,3 +18,4 @@ sudo apt install i3-gaps \
                  kitty \
                  neovim \
                  zsh \
+                 ripgrep \
