@@ -9,7 +9,8 @@ Plug 'vim-scripts/bufexplorer.zip'
 Plug 'scrooloose/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/mru.vim'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
@@ -56,7 +57,8 @@ map <leader>o :BufExplorer<cr>
 map <leader>f :MRU<cr>
 map <leader>n :NERDTreeToggle<cr>
 map <leader>m :NERDTreeFind<cr>
-let g:ctrlp_map = '<c-p>'
+map <leader>p :GFiles<cr>
+map <c-f>     :Rg<cr>
 
 map <leader>h :wincmd h<cr>
 map <leader>j :wincmd j<cr>
