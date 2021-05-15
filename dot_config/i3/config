@@ -185,7 +185,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.fehbg
-exec --no-startup-id compton
+exec --no-startup-id picom
 
 ######################
 # Window Assignments #

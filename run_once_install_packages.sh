@@ -13,7 +13,7 @@ if which lsb_release && [[ -n $(lsb_release -r | grep 20.04) ]]; then
                      dmenu \
                      playerctl \
                      feh \
-                     compton \
+                     picom \
                      polybar \
                      breeze-cursor-theme \
                      lxappearance \
