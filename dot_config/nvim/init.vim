@@ -11,11 +11,11 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-scripts/mru.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'arcticicestudio/nord-vim'
 
 " Language plugins
 Plug 'othree/html5.vim'
@@ -46,12 +46,12 @@ let NERDTreeMinimalUI = 1
 let NERDTreeQuitOnOpen = 1
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'nord',
       \ }
 
 set termguicolors
 set background=dark
-colorscheme gruvbox
+colorscheme nord
 
 map <leader>o :BufExplorer<cr>
 map <leader>f :MRU<cr>
