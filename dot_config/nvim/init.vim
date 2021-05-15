@@ -22,6 +22,8 @@ Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 Plug 'rodjek/vim-puppet'
+Plug 'nathangrigg/vim-beancount'
+Plug 'jvirtanen/vim-hcl'
 
 "" Markdown
 Plug 'godlygeek/tabular'
