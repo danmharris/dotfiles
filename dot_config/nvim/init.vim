@@ -24,6 +24,7 @@ Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlig
 Plug 'rodjek/vim-puppet'
 Plug 'nathangrigg/vim-beancount'
 Plug 'jvirtanen/vim-hcl'
+Plug 'fatih/vim-go'
 
 "" Markdown
 Plug 'godlygeek/tabular'
