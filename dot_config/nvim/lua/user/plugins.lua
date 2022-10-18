@@ -23,9 +23,14 @@ end
 
 function configure_telescope()
   require ('telescope').setup()
-  vim.keymap.set('n', 'ff', ':Telescope find_files<CR>')
-  vim.keymap.set('n', 'fg', ':Telescope live_grep<CR>')
-  vim.keymap.set('n', 'fb', ':Telescope buffers<CR>')
+  local builtin = require('telescope.builtin')
+  vim.keymap.set('n', '<C-p>', function() builtin.find_files() end)
+  vim.keymap.set('n', '<C-f>', function() builtin.live_grep() end)
+  vim.keymap.set('n', '<Leader>bf', function() builtin.buffers() end)
+  vim.keymap.set('n', '<Leader>bb', ':ls<CR>:buffer ')
+
+  vim.keymap.set('n', '<Leader>gl', function() builtin.git_bcommits() end)
+  vim.keymap.set('n', '<Leader>gs', function() builtin.git_status() end)
 end
 
 function configure_cmp()
