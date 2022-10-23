@@ -1,0 +1,106 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+  vars:
+    chezmoi_version: 2.25.0
+    packages:
+      - ripgrep
+      - nodejs
+      - npm
+      - zsh
+      - tmux
+  tasks:
+    - name: Install packages
+      package:
+        name: "{{ item }}"
+        state: latest
+      loop: "{{ packages }}"
+      become: true
+
+    - name: Check for fonts
+      stat:
+        path: /usr/share/fonts/truetype/jetbrains-mono
+      register: fonts_stat
+      tags:
+        - fonts
+    - name: Download fonts
+      block:
+        - name: Get fonts zip
+          get_url:
+            url: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/JetBrainsMono.zip
+            dest: /tmp/JetBrainsMono.zip
+        - name: Make fonts directory
+          file:
+            path: /usr/share/fonts/truetype/jetbrains-mono
+            state: directory
+          become: true
+        - name: Unzip fonts
+          unarchive:
+            src: /tmp/JetBrainsMono.zip
+            dest: /usr/share/fonts/truetype/jetbrains-mono
+            remote_src: yes
+          become: true
+        - name: Clear fonts cache
+          command: fc-cache -f
+          become: true
+      when: not fonts_stat.stat.exists
+      tags:
+        - fonts
+
+    - name: Add neovim repository
+      apt_repository:
+        repo: ppa:neovim-ppa/stable
+        state: present
+      become: true
+      tags:
+        - editor
+    - name: Install neovim
+      package:
+        name: neovim
+        state: latest
+      become: true
+      tags:
+        - editor
+    - name: Install packer
+      git:
+        repo: https://github.com/wbthomason/packer.nvim
+        clone: yes
+        depth: 1
+        dest: ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+        update: no
+      tags:
+        - editor
+
+    - name: Check for starship prompt
+      stat:
+        path: /usr/local/bin/starship
+      register: starship_stat
+      tags:
+        - shell
+    - name: Install starship
+      block:
+        - name: Get install script
+          get_url:
+            url: https://starship.rs/install.sh
+            dest: /tmp/starship.sh
+        - name: Run install script
+          command: sh /tmp/starship.sh
+      when: not starship_stat.stat.exists
+      tags:
+        - shell
+
+    - name: Check chezmoi installed
+      command: chezmoi --version
+      register: chezmoi_result
+      ignore_errors: true
+      changed_when: false
+    - name: Install chezmoi
+      block:
+        - name: Get deb package
+          get_url:
+            url: "https://github.com/twpayne/chezmoi/releases/download/v{{ chezmoi_version }}/chezmoi_{{ chezmoi_version }}_linux_amd64.deb"
+            dest: /tmp/chezmoi.deb
+        - name: Install deb package
+          apt:
+            deb: /tmp/chezmoi.deb
+      when: (chezmoi_result is failed) or (chezmoi_version not in chezmoi_result.stdout)
