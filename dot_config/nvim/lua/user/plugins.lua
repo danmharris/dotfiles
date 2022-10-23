@@ -31,6 +31,7 @@ function configure_telescope()
 
   vim.keymap.set('n', '<Leader>gl', function() builtin.git_bcommits() end)
   vim.keymap.set('n', '<Leader>gs', function() builtin.git_status() end)
+  vim.keymap.set('n', 'gr', function() builtin.lsp_references() end)
 end
 
 function configure_cmp()
@@ -62,11 +63,18 @@ function configure_cmp()
   })
 
   local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+  local on_attach = function(client, bufnr)
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
+    vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
+  end
 
   local servers = { 'tsserver' }
   for _,server in ipairs(servers) do
     require('lspconfig')[server].setup {
       capabilities = capabilities,
+      on_attach = on_attach,
     }
   end
 end
