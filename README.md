@@ -5,12 +5,10 @@ This repository holds config files to applications that I use.
 ## Current setup
 
 * OS: Ubuntu 20.04
-* Window Manager: i3-gaps
-* Status bar: polybar
-* Compositor: compton
-* Shell: zsh with oh-my-zsh
-* Terminal: kitty
+* Desktop environment: GNOME
+* Shell: zsh
 * Editor: neovim
+* Colourscheme: palenight
 
 ## Installation
 
