@@ -10,4 +10,7 @@ compinit
 
 zstyle ':completion:*' menu select
 
+export N_PREFIX=$HOME/.n
+export PATH=$N_PREFIX/bin:$PATH
+
 eval $(starship init zsh)
