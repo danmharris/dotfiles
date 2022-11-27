@@ -103,4 +103,5 @@
         - name: Install deb package
           apt:
             deb: /tmp/chezmoi.deb
+          become: true
       when: (chezmoi_result is failed) or (chezmoi_version not in chezmoi_result.stdout)
