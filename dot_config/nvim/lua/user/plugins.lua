@@ -70,7 +70,7 @@ function configure_cmp()
     vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
   end
 
-  local servers = { 'tsserver', 'gopls' }
+  local servers = { 'tsserver', 'gopls', 'solargraph' }
   for _,server in ipairs(servers) do
     require('lspconfig')[server].setup {
       capabilities = capabilities,
