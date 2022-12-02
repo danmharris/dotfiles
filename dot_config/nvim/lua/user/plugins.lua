@@ -27,7 +27,6 @@ function configure_telescope()
   vim.keymap.set('n', '<C-p>', function() builtin.find_files() end)
   vim.keymap.set('n', '<C-f>', function() builtin.live_grep() end)
   vim.keymap.set('n', '<Leader>bf', function() builtin.buffers() end)
-  vim.keymap.set('n', '<Leader>bb', ':ls<CR>:buffer ')
 
   vim.keymap.set('n', '<Leader>gl', function() builtin.git_bcommits() end)
   vim.keymap.set('n', '<Leader>gs', function() builtin.git_status() end)
