@@ -9,6 +9,7 @@
       - npm
       - zsh
       - tmux
+      - fzf
   tasks:
     - name: Install packages
       package:
