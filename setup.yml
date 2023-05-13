@@ -50,7 +50,7 @@
 
     - name: Add neovim repository
       apt_repository:
-        repo: ppa:neovim-ppa/stable
+        repo: ppa:neovim-ppa/unstable
         state: present
       become: true
       tags:
