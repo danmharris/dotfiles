@@ -15,3 +15,6 @@ vim.opt.swapfile = false
 vim.opt.colorcolumn = '80'
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+
+vim.opt.showmode = false
+vim.opt.showcmd = false

@@ -1,7 +1,7 @@
-function configure_palenight()
+function configure_theme()
   vim.opt.background = 'dark'
   vim.opt.termguicolors = true
-  vim.cmd('colorscheme palenight')
+  vim.cmd.colorscheme('catppuccin-macchiato')
 end
 
 function configure_nvim_tree()
@@ -82,8 +82,9 @@ require('packer').startup(function(use)
   use { 'wbthomason/packer.nvim' }
 
   use {
-    'drewtempelmeyer/palenight.vim',
-    config = configure_palenight,
+    'catppuccin/nvim',
+    as = 'catppuccin',
+    config = configure_theme,
   }
 
   use {
