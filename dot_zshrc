@@ -10,6 +10,8 @@ compinit
 
 zstyle ':completion:*' menu select
 
+setopt HIST_IGNORE_ALL_DUPS
+
 export N_PREFIX=$HOME/.n
 export PATH=$N_PREFIX/bin:$HOME/go/bin:$PATH
 
