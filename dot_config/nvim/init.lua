@@ -1,3 +1,4 @@
+require("danmharris.cmd")
 require("danmharris.opt")
 require("danmharris.plugin")
 require("danmharris.plugin.catppuccin")
