@@ -15,4 +15,11 @@ wk.register({
     h = { function() vim.lsp.buf.hover() end, "Hover" },
     i = { function() vim.lsp.buf.implementation() end, "Go to implementation" },
   },
+  v = {
+    name = "vcs",
+    s = { ":Git<CR>", "Git status" },
+    d = { ":Git diff<CR>", "Git diff" },
+    c = { ":Git commit<CR>", "Git commit" },
+    p = { ":Git pull<CR>", "Git pull" },
+  },
 }, { prefix = "<leader>" })

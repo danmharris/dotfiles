@@ -34,4 +34,7 @@ require("lazy").setup({
   {
     "neovim/nvim-lspconfig",
   },
+  {
+    "tpope/vim-fugitive",
+  },
 })
