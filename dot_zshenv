@@ -1,0 +1,6 @@
+export N_PREFIX=$HOME/.n
+
+typeset -U path PATH
+path=($N_PREFIX/bin $HOME/go/bin $HOME/bin $path)
+
+export PATH
