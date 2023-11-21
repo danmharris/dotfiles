@@ -6,7 +6,6 @@ bindkey -v
 zstyle :compinstall filename '/home/dan/.zshrc'
 
 autoload -Uz compinit; compinit
-compinit
 
 zstyle ':completion:*' menu select
 
