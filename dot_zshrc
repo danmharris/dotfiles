@@ -27,5 +27,9 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias gl='git log --oneline --graph'
 
-eval "$(rbenv init -)"
-eval $(starship init zsh)
+if type rbenv > /dev/null; then
+    eval "$(rbenv init -)"
+fi
+if type starship > /dev/null; then
+    eval "$(starship init zsh)"
+fi
