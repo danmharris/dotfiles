@@ -5,3 +5,4 @@ lspconfig.elixirls.setup({
 })
 lspconfig.gopls.setup({})
 lspconfig.solargraph.setup({})
+lspconfig.ansiblels.setup({})

@@ -16,6 +16,7 @@ require("lazy").setup({
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   "nvim-tree/nvim-tree.lua",
   "nvim-tree/nvim-web-devicons",
+  "pearofducks/ansible-vim",
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
