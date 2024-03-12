@@ -8,3 +8,8 @@ autocmd("BufWritePre", {
   pattern = "*",
   command = "%s/\\s\\+$//e"
 })
+
+autocmd({"BufRead", "BufNewFile"}, {
+  pattern = "*/playbooks/*.yml",
+  command = "set filetype=yaml.ansible",
+})
