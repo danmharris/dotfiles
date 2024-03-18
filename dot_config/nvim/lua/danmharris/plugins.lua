@@ -27,8 +27,8 @@ require("lazy").setup({
     },
     {
         "nvim-treesitter/nvim-treesitter",
+        event = "BufRead",
         build = ":TSUpdate",
-        event = "BufEnter",
         opts = {
             ensure_installed = {
                 "beancount",
@@ -77,7 +77,6 @@ require("lazy").setup({
     },
     {
         "williamboman/mason.nvim",
-        event = "VeryLazy",
         config = true,
     },
     {
