@@ -1,12 +1,14 @@
 local wk = require("which-key")
-local builtin = require("telescope.builtin")
+local builtin = function()
+  return require("telescope.builtin")
+end
 wk.register({
   f = {
     name = "find",
     c = { ":NvimTreeFindFile<CR>", "Find current file" },
-    f = { builtin.find_files, "Find files" },
-    g = { builtin.live_grep, "Grep" },
-    b = { builtin.buffers, "Find buffers" },
+    f = { function() builtin().find_files() end, "Find files" },
+    g = { function() builtin().live_grep() end, "Grep" },
+    b = { function() builtin().buffers() end, "Find buffers" },
   },
   g = {
     name = "goto",
