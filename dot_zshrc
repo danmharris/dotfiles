@@ -32,3 +32,9 @@ fi
 if type starship > /dev/null; then
     eval "$(starship init zsh)"
 fi
+if type kubectl > /dev/null; then
+    . <(kubectl completion zsh)
+fi
+if type flux > /dev/null; then
+    . <(flux completion zsh)
+fi
